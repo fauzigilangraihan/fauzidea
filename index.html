@@ -18,17 +18,75 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- AUTH / GATEKEEPER LOCK SCREEN (Tanggal Jadian: 28 09 2026) -->
+  <div class="auth-gate-overlay" id="authGateOverlay">
+    <div class="auth-card">
+      <div class="auth-heart-badge">
+        <i class="fa-solid fa-heart-pulse"></i>
+      </div>
+      <h2 class="auth-title">Gerbang Cinta Rahasia 🌿</h2>
+      <p class="auth-subtitle">Website ini khusus & sakral hanya untuk <strong>Fauzi & Dea</strong>. Masukkan tanggal jadian kita untuk membuka kunci cinta! 💕</p>
+
+      <div class="auth-user-selector">
+        <label class="user-select-label">Siapa yang lagi login?</label>
+        <div class="user-pill-group">
+          <button type="button" class="user-pill-btn active" data-user="Dea">
+            <span>👧</span> Dea Cantikku
+          </button>
+          <button type="button" class="user-pill-btn" data-user="Fauzi">
+            <span>👦</span> Fauzi Pangeranmu
+          </button>
+        </div>
+      </div>
+
+      <div class="auth-inputs-wrap">
+        <label class="auth-input-label"><i class="fa-solid fa-key"></i> Tanggal Jadian Kita (DD - MM - YYYY):</label>
+        <div class="auth-code-boxes">
+          <input type="text" id="authDay" maxlength="2" placeholder="28" autocomplete="off" inputmode="numeric">
+          <span class="auth-sep">/</span>
+          <input type="text" id="authMonth" maxlength="2" placeholder="09" autocomplete="off" inputmode="numeric">
+          <span class="auth-sep">/</span>
+          <input type="text" id="authYear" maxlength="4" placeholder="2026" autocomplete="off" inputmode="numeric">
+        </div>
+        <small class="auth-hint">💡 Hint: Hari spesial saat Fauzi & Dea resmi jadian (28 09 2026)</small>
+      </div>
+
+      <div class="auth-feedback" id="authFeedback"></div>
+
+      <button class="btn btn-primary btn-unlock" id="btnUnlockAuth">
+        <i class="fa-solid fa-lock-open"></i> Buka Gembok Hati Kita 🔓
+      </button>
+    </div>
+  </div>
+
+  <!-- Fullscreen Kiss Effect Overlay -->
+  <div class="kiss-fx-overlay" id="kissFxOverlay"></div>
+
   <!-- Floating background particles -->
   <div class="ambient-background" id="ambientBg"></div>
 
-  <!-- Music Floating Widget -->
-  <div class="music-pill" id="musicToggle" title="Nyalakan / Matikan Musik Lucu">
-    <div class="music-disc" id="musicDisc">
-      <i class="fa-solid fa-music"></i>
+  <!-- Floating Top Controls (User Badge, Kiss Button & Music Widget) -->
+  <div class="top-floating-bar">
+    <div class="user-status-pill" id="userStatusPill" title="Profil Sedang Aktif">
+      <span class="user-status-avatar" id="activeUserAvatar">👧</span>
+      <div class="user-status-text">
+        <span class="user-status-name" id="activeUserName">Dea Cantik</span>
+        <button class="btn-switch-user" id="btnSwitchUser" title="Kunci / Ganti Profil">Ganti / Kunci 🔒</button>
+      </div>
     </div>
-    <div class="music-info">
-      <span class="music-title">Lofi Matcha Love 🍵</span>
-      <span class="music-status" id="musicStatus">Klik untuk play 🎵</span>
+
+    <!-- Music Floating Widget (Buka Music Lounge & Bebas Pilih Lagu Sendiri) -->
+    <div class="music-pill" id="musicToggle" title="Klik untuk Pilih & Putar Lagu Sendiri 🎧">
+      <div class="music-disc" id="musicDisc">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <div class="music-info">
+        <span class="music-title" id="currentMusicTitle">Pilih Musik Favorit 🎧</span>
+        <span class="music-status" id="musicStatus">Klik untuk pilih lagu 🎵</span>
+      </div>
+      <button class="btn-change-song-pill" id="btnChangeSongPill" title="Buka Pilihan Lagu / Ganti Musik">
+        <i class="fa-solid fa-sliders"></i>
+      </button>
     </div>
   </div>
 
@@ -38,7 +96,8 @@
       <span class="ticker-item">🚨 <strong>BREAKING BUCIN:</strong> Fauzi Gilang Raihan terbukti 1000% gak bisa hidup tanpa Dea Khitibul Umam! 🍀</span>
       <span class="ticker-item">💖 <strong>DIAGNOSIS DOKTER:</strong> Tingkat keimutan Dea Khitibul Umam bikin Fauzi salting 24/7! 🍵</span>
       <span class="ticker-item">🥰 <strong>REKOR DUNIA:</strong> Pasangan Fauzi & Dea dinobatkan sebagai pasangan tergemas di bumi! ✨</span>
-      <span class="ticker-item">🎁 <strong>ALERT KHUSUS:</strong> Dea berhak dapat pelukan hangat & traktiran apa aja dari Fauzi hari ini! 🌸</span>
+      <span class="ticker-item">🎁 <strong>ALERT KHUSUS:</strong> Dea berhak dapat pelukan hangat & ciuman manis tanpa batas dari Fauzi! 💋</span>
+      <span class="ticker-item">📅 <strong>TANGGAL SAKRAL:</strong> 28 September 2026 adalah hari terbaik sepanjang masa! 💍</span>
     </div>
   </div>
 
@@ -122,7 +181,13 @@
 
       <div class="hero-buttons">
         <a href="#gallerySection" class="btn btn-primary">
-          <i class="fa-solid fa-camera-retro"></i> Lihat Galeri Kita
+          <i class="fa-solid fa-camera-retro"></i> Galeri & Video Kita
+        </a>
+        <a href="#couponsSection" class="btn btn-primary btn-coupon-glow">
+          <i class="fa-solid fa-ticket"></i> Kupon Manja
+        </a>
+        <a href="#waChatSection" class="btn btn-secondary btn-wa-glow">
+          <i class="fa-brands fa-whatsapp"></i> Chat Romantis
         </a>
         <a href="#letterSection" class="btn btn-secondary">
           <i class="fa-solid fa-envelope-open-text"></i> Baca Surat Cinta
@@ -161,21 +226,51 @@
         <button class="small-pill-btn" id="editDateBtn">
           <i class="fa-solid fa-calendar-heart"></i> Ubah Tanggal Jadian
         </button>
-        <span class="counter-note" id="startDateLabel">Sejak: 14 Februari 2024</span>
+        <span class="counter-note" id="startDateLabel">Sejak: 28 September 2026</span>
       </div>
     </section>
 
-    <!-- Polaroid Memories Gallery with REAL PHOTOS -->
+    <!-- Polaroid Memories & Video Gallery (IndexedDB Powered - Bebas Tanpa Batas) -->
     <section class="section-card memories-section" id="gallerySection">
       <div class="section-header">
         <span class="icon-bubble">📸</span>
-        <h2>Galeri Kenangan Manis</h2>
-        <p>Klik foto polaroid mana saja untuk memperbesar & kirim tanda cinta! 💖</p>
+        <h2>Galeri Kenangan & Video Kita</h2>
+        <p>Bebas upload foto kencan & video romantis berdua tanpa batas memori! 💖✨</p>
       </div>
 
-      <div class="polaroid-grid">
+      <!-- Gallery Filter & Upload Bar -->
+      <div class="gallery-controls-bar">
+        <div class="gallery-filter-tabs">
+          <button class="filter-tab-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> Semua (<span id="totalMediaCount">10</span>)</button>
+          <button class="filter-tab-btn" data-filter="photo"><i class="fa-solid fa-image"></i> Foto Polaroid</button>
+          <button class="filter-tab-btn" data-filter="video"><i class="fa-solid fa-video"></i> Video Bucin</button>
+        </div>
+        <button class="btn btn-primary btn-add-media" id="btnOpenUploadModal">
+          <i class="fa-solid fa-cloud-arrow-up"></i> + Tambah Foto / Video Baru
+        </button>
+      </div>
+
+      <div class="polaroid-grid" id="mainMediaGrid">
+        <!-- Built-in Featured Romantic Video Card -->
+        <div class="polaroid-card video-polaroid-card" data-media-type="video" data-tilt>
+          <div class="tape-sticker"></div>
+          <div class="polaroid-video-wrapper">
+            <!-- Canvas Animated Romantic Reel Generator / Video Player -->
+            <canvas id="featuredRomanticVideoCanvas" width="360" height="480" class="polaroid-video-canvas"></canvas>
+            <div class="video-overlay-play" id="btnPlayFeaturedVideo">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <div class="video-badge-tag"><i class="fa-solid fa-film"></i> Video Romantis</div>
+          </div>
+          <div class="polaroid-caption">
+            <p>Our Cinematic Love Story 🎬🍃</p>
+            <span class="polaroid-date">Video kenangan paling manis</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
         <!-- Photo Card 1: Couple Mirror Selfie -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo1_couple_mirror.jpg" data-caption="Kocak & melet bareng di depan cermin, kencan paling seru!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo1_couple_mirror.jpg" data-caption="Kocak & melet bareng di depan cermin, kencan paling seru!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo1_couple_mirror.jpg" alt="Mirror Selfie Berdua" class="polaroid-img">
@@ -188,7 +283,7 @@
         </div>
 
         <!-- Photo Card 2: Pacar Pose Samping -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo2_pacar_side.jpg" data-caption="Dari sudut mana aja kamu selalu anggun dan mempesona.">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo2_pacar_side.jpg" data-caption="Dari sudut mana aja kamu selalu anggun dan mempesona.">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo2_pacar_side.jpg" alt="Foto Pacar Anggun" class="polaroid-img">
@@ -201,7 +296,7 @@
         </div>
 
         <!-- Photo Card 3: Pacar Full Mirror -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo3_pacar_mirror.jpg" data-caption="Bidadari matcha favoritku dengan outfit paling kece!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo3_pacar_mirror.jpg" data-caption="Bidadari matcha favoritku dengan outfit paling kece!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo3_pacar_mirror.jpg" alt="Foto Pacar Mirror Selfie" class="polaroid-img">
@@ -214,7 +309,7 @@
         </div>
 
         <!-- Photo Card 4: Couple Cafe Malam -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo4_couple_cafe.jpg" data-caption="Malam hangat berdua, foto di layar hp sambil ketawa-tawa bareng.">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo4_couple_cafe.jpg" data-caption="Malam hangat berdua, foto di layar hp sambil ketawa-tawa bareng.">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo4_couple_cafe.jpg" alt="Kencan di Cafe Malam" class="polaroid-img">
@@ -227,7 +322,7 @@
         </div>
 
         <!-- Photo Card 5: Pacar Gemas Selfie -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo5_pacar_cute.jpg" data-caption="Pose gemas andalan yang selalu sukses bikin salting seharian!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo5_pacar_cute.jpg" data-caption="Pose gemas andalan yang selalu sukses bikin salting seharian!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo5_pacar_cute.jpg" alt="Pacar Pose Gemas" class="polaroid-img">
@@ -240,7 +335,7 @@
         </div>
 
         <!-- Photo Card 6: Pacar Bawa Bunga Anggun -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo6_pacar_bunga_anggun.jpg" data-caption="Bunga mawarnya aja kalah cantik sama bidadari yang megang!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo6_pacar_bunga_anggun.jpg" data-caption="Bunga mawarnya aja kalah cantik sama bidadari yang megang!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo6_pacar_bunga_anggun.jpg" alt="Pacar Bawa Bunga Cantik" class="polaroid-img">
@@ -253,7 +348,7 @@
         </div>
 
         <!-- Photo Card 7: Pacar Ngintip Es Teh -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo7_pacar_ngintip_teh.jpg" data-caption="Ngintip di balik es teh aja gemasnya minta ampun!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo7_pacar_ngintip_teh.jpg" data-caption="Ngintip di balik es teh aja gemasnya minta ampun!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo7_pacar_ngintip_teh.jpg" alt="Pacar Ngintip di Balik Minuman" class="polaroid-img">
@@ -266,7 +361,7 @@
         </div>
 
         <!-- Photo Card 8: Couple Senyum Manis Berdua -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo8_couple_sweet_night.jpg" data-caption="Dua insan paling bahagia di dunia, senyum tulus yang gak terganti!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo8_couple_sweet_night.jpg" data-caption="Dua insan paling bahagia di dunia, senyum tulus yang gak terganti!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
             <img src="assets/images/photo8_couple_sweet_night.jpg" alt="Foto Berdua Tersenyum Bahagia" class="polaroid-img">
@@ -279,10 +374,10 @@
         </div>
 
         <!-- Photo Card 9: Pacar Pose Bunga Gemas -->
-        <div class="polaroid-card" data-tilt data-photo="assets/images/photo9_bunga_gemas.jpg" data-caption="Pose monyong andalan sambil bawa bunga, gemas tingkat dewa!">
+        <div class="polaroid-card" data-media-type="photo" data-tilt data-photo="assets/images/photo9_pacar_bunga_gemas.jpg" data-caption="Pose monyong andalan sambil bawa bunga, gemas tingkat dewa!">
           <div class="tape-sticker"></div>
           <div class="polaroid-img-wrapper">
-            <img src="assets/images/photo9_bunga_gemas.jpg" alt="Pacar Pose Bunga Gemas" class="polaroid-img">
+            <img src="assets/images/photo9_pacar_bunga_gemas.jpg" alt="Pacar Pose Bunga Gemas" class="polaroid-img">
           </div>
           <div class="polaroid-caption">
             <p>Gemas Tingkat Dewa 😚💐</p>
@@ -290,6 +385,9 @@
           </div>
           <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
         </div>
+
+        <!-- Dynamic User Uploaded Media Container (IndexedDB) -->
+        <div id="dynamicMediaPlaceholder" style="display: contents;"></div>
       </div>
     </section>
 
@@ -406,12 +504,34 @@
     <section class="section-card coupons-section" id="couponsSection">
       <div class="section-header">
         <span class="icon-bubble">🎟️</span>
-        <h2>Buku Kupon Manja (Khusus Buat Kamu)</h2>
-        <p>Kupon ini sah dan bisa kamu klaim kapan aja tanpa batas waktu! 😉</p>
+        <h2>Buku Kupon Manja (Khusus Buat Dea)</h2>
+        <p>Kupon ini sah dan bisa kamu klaim kapan aja tanpa batas waktu! Fauzi wajib nurutin! 😉</p>
       </div>
 
-      <div class="coupons-grid">
-        <!-- Coupon 1 -->
+      <!-- Action Bar untuk Cowo (Fauzi) Menambah Kupon -->
+      <div class="coupons-action-bar">
+        <button class="btn btn-primary btn-add-coupon" id="btnOpenAddCouponModal">
+          <i class="fa-solid fa-pen-nib"></i> + Tambah Kupon Manja Baru dari Fauzi ✍️
+        </button>
+      </div>
+
+      <div class="coupons-grid" id="couponsGrid">
+        <!-- Coupon 1: Ciuman Manis & Kening (BARU & SPESIAL) -->
+        <div class="coupon-card coupon-kiss-special">
+          <div class="coupon-left coupon-left-kiss">
+            <span class="coupon-tag">VIP CINTA</span>
+            <span class="coupon-icon">💋</span>
+          </div>
+          <div class="coupon-middle">
+            <h4>Ciuman Manis & Cium Kening Sepuasnya</h4>
+            <p>Bebas minta ciuman mesra, elusan rambut lembut, dan cium kening hangat dari Fauzi kapan aja!</p>
+          </div>
+          <div class="coupon-right">
+            <button class="coupon-claim-btn btn-kiss-claim" data-title="Ciuman Manis & Cium Kening Sepuasnya 💋😚" data-type="kiss">Klaim Ciuman 💋</button>
+          </div>
+        </div>
+
+        <!-- Coupon 2: Traktir Minuman / Matcha -->
         <div class="coupon-card">
           <div class="coupon-left">
             <span class="coupon-tag">GRATIS 100%</span>
@@ -419,14 +539,14 @@
           </div>
           <div class="coupon-middle">
             <h4>Traktir Minuman / Matcha</h4>
-            <p>Berhak pesan minuman apa aja kesukaan kamu, aku yang bayarin full!</p>
+            <p>Berhak pesan minuman apa aja kesukaan kamu, aku yang bayarin full tanpa tapi!</p>
           </div>
           <div class="coupon-right">
             <button class="coupon-claim-btn" data-title="Traktir Minuman / Matcha 🍵">Klaim Kupon</button>
           </div>
         </div>
 
-        <!-- Coupon 2 -->
+        <!-- Coupon 3: Elus Kepala & Peluk Hangat -->
         <div class="coupon-card">
           <div class="coupon-left">
             <span class="coupon-tag">UNLIMITED</span>
@@ -434,42 +554,15 @@
           </div>
           <div class="coupon-middle">
             <h4>Elus Kepala & Peluk Hangat</h4>
-            <p>Berhak dielus kepalanya sampai ngantuk dan dapet pelukan tanpa batas waktu.</p>
+            <p>Berhak dielus kepalanya sampai ngantuk dan dapet pelukan tanpa batas waktu sampai tenang.</p>
           </div>
           <div class="coupon-right">
             <button class="coupon-claim-btn" data-title="Elus Kepala & Peluk Hangat 💆‍♀️">Klaim Kupon</button>
           </div>
         </div>
 
-        <!-- Coupon 3 -->
-        <div class="coupon-card">
-          <div class="coupon-left">
-            <span class="coupon-tag">VIP PASS</span>
-            <span class="coupon-icon">👑</span>
-          </div>
-          <div class="coupon-middle">
-            <h4>Bebas Ngambek 24 Jam</h4>
-            <p>Kalau kamu lagi ngambek, cowokmu ini wajib minta maaf duluan & manjain!</p>
-          </div>
-          <div class="coupon-right">
-            <button class="coupon-claim-btn" data-title="Bebas Ngambek 24 Jam 👑">Klaim Kupon</button>
-          </div>
-        </div>
-
-        <!-- Coupon 4 -->
-        <div class="coupon-card">
-          <div class="coupon-left">
-            <span class="coupon-tag">MAKAN PUAS</span>
-            <span class="coupon-icon">🍕</span>
-          </div>
-          <div class="coupon-middle">
-            <h4>Kencan Makan Enak Bebas Pilih</h4>
-            <p>Pilih restoran atau jajanan apa aja yang kamu pengenin hari ini!</p>
-          </div>
-          <div class="coupon-right">
-            <button class="coupon-claim-btn" data-title="Kencan Makan Enak Bebas Pilih 🍕">Klaim Kupon</button>
-          </div>
-        </div>
+        <!-- Dynamic User Created Coupons by Fauzi -->
+        <div id="dynamicCouponsPlaceholder" style="display: contents;"></div>
       </div>
     </section>
 
@@ -573,6 +666,103 @@
       </div>
     </section>
 
+    <!-- BUCIN WHATSAPP MESSENGER SECTION (Kabar-Kabaran Seperti WA) -->
+    <section class="section-card wa-chat-section" id="waChatSection">
+      <div class="section-header">
+        <span class="icon-bubble">💬</span>
+        <h2>Ruang Obrolan Cinta (Bucin WA)</h2>
+        <p>Bisa kabar-kabaran, kirim foto kencan, stiker ciuman & tersimpan aman selamanya! 📲💚</p>
+      </div>
+
+      <!-- WA Teaser / Launcher Card (Icon Chatan sebelum dibuka) -->
+      <div class="wa-teaser-card" id="waTeaserCard">
+        <div class="wa-teaser-icon-box">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="teaser-pulse-ring"></span>
+        </div>
+        <div class="wa-teaser-info">
+          <h3>Bucin WhatsApp Messenger 🍃</h3>
+          <p>Kamar obrolan privat khusus Fauzi Gilang Raihan & Dea Khitibul Umam.</p>
+        </div>
+        <button class="btn btn-primary btn-open-wa-chat" id="btnToggleWaWindow">
+          <i class="fa-solid fa-comments"></i> Buka Obrolan WhatsApp Kita 📲
+        </button>
+      </div>
+
+      <!-- WA App Window (Disembunyikan awalnya, dibuka saat icon/tombol diklik) -->
+      <div class="wa-app-window" id="waAppWindow" style="display: none;">
+        <!-- WA Header -->
+        <div class="wa-header">
+          <div class="wa-contact-info">
+            <div class="wa-avatar-wrap">
+              <span class="wa-avatar-char" id="waHeaderAvatar">👧</span>
+              <span class="wa-status-dot"></span>
+            </div>
+            <div class="wa-contact-details">
+              <h3 class="wa-contact-name" id="waHeaderName">Dea Khitibul Umam 💚</h3>
+              <p class="wa-contact-status" id="waTypingStatus">online • sedang kangen banget... 🌸</p>
+            </div>
+          </div>
+
+          <div class="wa-header-actions">
+            <!-- Switch Persona Button -->
+            <button class="wa-sender-toggle-badge" id="waSenderToggle" title="Klik untuk berganti pengirim chat">
+              <span>Chat Sebagai:</span>
+              <strong id="waActiveSenderLabel">👦 Fauzi</strong>
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+            <button class="wa-icon-action-btn" id="btnWaSimulateCall" title="Panggil Video Romantis">
+              <i class="fa-solid fa-video"></i>
+            </button>
+            <button class="wa-icon-action-btn btn-close-chat" id="btnCloseWaWindow" title="Tutup / Sembunyikan Obrolan">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- WA Messages Area -->
+        <div class="wa-messages-container" id="waMessagesContainer">
+          <div class="wa-date-divider">
+            <span>28 September 2026 • Awal Cerita Kita 💍</span>
+          </div>
+          <!-- Messages will be rendered dynamically from IndexedDB -->
+        </div>
+
+        <!-- Quick Romantic Stickers Bar -->
+        <div class="wa-stickers-bar">
+          <span class="sticker-label">Stiker Cepat:</span>
+          <button class="wa-quick-chip" data-sticker="Muachhh! Sayang banget sama kamu bidadariku! 💋😚">💋 Ciuman</button>
+          <button class="wa-quick-chip" data-sticker="Peluk erat dari jauh, jangan capek-capek ya sayang! 🤗💚">🤗 Peluk</button>
+          <button class="wa-quick-chip" data-sticker="Lagi kangen berat nih, ayo nanti kencan jajan matcha! 🥺🍵">🥺 Kangen</button>
+          <button class="wa-quick-chip" data-sticker="Semangat ya cantikku, kamu selalu yang terbaik di hatiku! 🌸👑">🌸 Semangat</button>
+          <button class="wa-quick-chip" data-sticker="Love you 3000 sampai selamanya! Janji selalu berdua! 💍✨">💍 Selamanya</button>
+        </div>
+
+        <!-- WA Input Box -->
+        <div class="wa-input-bar">
+          <label class="wa-attach-btn" title="Kirim Foto di Chat">
+            <i class="fa-solid fa-camera"></i>
+            <input type="file" id="waPhotoInput" accept="image/*" style="display: none;">
+          </label>
+          <input type="text" id="waMessageInput" class="wa-input-field" placeholder="Ketik kabar atau kata manis di sini..." autocomplete="off">
+          <button class="wa-send-btn" id="waSendBtn" title="Kirim Pesan">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+
+        <!-- Auto-Reply Simulator Toggle Bar -->
+        <div class="wa-footer-bar">
+          <label class="wa-toggle-label">
+            <input type="checkbox" id="waAutoReplyToggle" checked>
+            <span>Balasan Otomatis Manis dari Pasangan 🥰</span>
+          </label>
+          <button class="wa-clear-btn" id="waClearChatBtn" title="Bersihkan Riwayat Chat">
+            <i class="fa-solid fa-trash-can"></i> Hapus Riwayat
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Cute Runaway Button Mini Game -->
     <section class="section-card game-section" id="gameSection">
       <div class="section-header">
@@ -600,11 +790,44 @@
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-mascot">🍵 💚 🍀</div>
-      <p>Dibuat dengan sepenuh hati khusus untuk bidadariku tercinta.</p>
-      <small>Always and forever with you.</small>
+      <p>Dibuat dengan sepenuh hati khusus untuk bidadariku tercinta Dea Khitibul Umam.</p>
+      <small>Always and forever with Fauzi Gilang Raihan • 28 09 2026</small>
     </footer>
 
   </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <div class="floating-wa-btn" id="floatingWaBtn" title="Buka Obrolan WhatsApp Bucin">
+    <div class="floating-wa-icon-inner">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <span class="floating-wa-label">Chat Sayang 💬</span>
+    <span class="floating-wa-pulse"></span>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Super Responsive) -->
+  <nav class="mobile-bottom-nav" id="mobileBottomNav">
+    <a href="#" class="mobile-nav-item active" data-target="top">
+      <i class="fa-solid fa-heart"></i>
+      <span>Home</span>
+    </a>
+    <a href="#gallerySection" class="mobile-nav-item">
+      <i class="fa-solid fa-camera-retro"></i>
+      <span>Galeri</span>
+    </a>
+    <a href="#couponsSection" class="mobile-nav-item">
+      <i class="fa-solid fa-ticket"></i>
+      <span>Kupon</span>
+    </a>
+    <a href="#waChatSection" class="mobile-nav-item">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Chat WA</span>
+    </a>
+    <button class="mobile-nav-item" id="mobileNavMusicBtn">
+      <i class="fa-solid fa-music"></i>
+      <span>Musik</span>
+    </button>
+  </nav>
 
   <!-- Modal for Message Popup -->
   <div class="modal-overlay" id="modalOverlay">
@@ -641,7 +864,7 @@
         <span class="modal-icon">📸</span>
         <button class="modal-close" id="photoModalClose">&times;</button>
       </div>
-      <div class="photo-preview-wrapper">
+      <div class="photo-preview-wrapper" id="photoModalMediaWrapper">
         <img src="" id="photoModalImg" alt="Foto Kenangan" class="photo-modal-img">
       </div>
       <p class="photo-modal-caption" id="photoModalCaption">Caption di sini...</p>
@@ -649,6 +872,240 @@
         <button class="btn btn-primary" id="photoLoveBtn">
           <i class="fa-solid fa-heart"></i> Kirim Cinta (<span id="photoLoveCounter">0</span>)
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Tambah Foto / Video Baru (IndexedDB Tanpa Batas) -->
+  <div class="modal-overlay" id="uploadMediaModal">
+    <div class="modal-content modal-media-upload">
+      <div class="modal-header">
+        <span class="modal-icon">📸🎬</span>
+        <button class="modal-close" id="uploadMediaClose">&times;</button>
+      </div>
+      <h3 class="modal-title">Tambah Momen Baru Kita</h3>
+      <p class="modal-sub">Simpan foto atau video kencan berdua tanpa batas memori! 🍃</p>
+
+      <div class="form-group">
+        <label class="form-label">Tipe Momen:</label>
+        <div class="media-type-selector">
+          <button type="button" class="type-pill-btn active" data-type="photo"><i class="fa-solid fa-image"></i> Foto Cantik</button>
+          <button type="button" class="type-pill-btn" data-type="video"><i class="fa-solid fa-video"></i> Video Romantis</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Pilih File dari HP / Laptop:</label>
+        <div class="file-drop-area" id="fileDropArea">
+          <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+          <span class="drop-text" id="dropFileName">Pilih Foto atau Video</span>
+          <input type="file" id="mediaFileInput" accept="image/*,video/*" class="hidden-file-input">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Atau Masukkan URL Video / Gambar Langsung (Opsional):</label>
+        <input type="url" id="mediaUrlInput" class="form-input" placeholder="https://... (link video mp4 atau gambar)">
+      </div>
+
+      <div class="form-group-row">
+        <div class="form-group" style="flex: 2;">
+          <label class="form-label">Judul Momen:</label>
+          <input type="text" id="mediaTitleInput" class="form-input" placeholder="Misal: Kencan Pertama di Cafe ☕">
+        </div>
+        <div class="form-group" style="flex: 1;">
+          <label class="form-label">Diupload Oleh:</label>
+          <select id="mediaUploaderSelect" class="form-input">
+            <option value="Fauzi">👦 Fauzi</option>
+            <option value="Dea">👧 Dea</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Pesan Manis / Caption Cinta:</label>
+        <textarea id="mediaCaptionInput" class="form-textarea" rows="2" placeholder="Tuliskan cerita manis saat momen ini terjadi... 💚"></textarea>
+      </div>
+
+      <div class="media-upload-preview" id="mediaUploadPreview"></div>
+
+      <div class="modal-footer-btns">
+        <button class="btn btn-secondary" id="btnCancelUpload">Batal</button>
+        <button class="btn btn-primary" id="btnSaveMedia"><i class="fa-solid fa-heart"></i> Simpan ke Galeri Kita</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Tambah Kupon Manja Baru dari Fauzi -->
+  <div class="modal-overlay" id="addCouponModal">
+    <div class="modal-content modal-coupon-content">
+      <div class="modal-header">
+        <span class="modal-icon">🎟️✨</span>
+        <button class="modal-close" id="addCouponClose">&times;</button>
+      </div>
+      <h3 class="modal-title">Buat Kupon Baru dari Fauzi</h3>
+      <p class="modal-sub">Isi janji atau traktiran spesial buat bidadarimu Dea! 😉</p>
+
+      <div class="form-group">
+        <label class="form-label">Nama Kupon:</label>
+        <input type="text" id="couponTitleInput" class="form-input" placeholder="Misal: Nemenin Nonton Drakor Sampai Subuh">
+      </div>
+
+      <div class="form-group-row">
+        <div class="form-group" style="flex: 1;">
+          <label class="form-label">Emoji Kupon:</label>
+          <select id="couponEmojiSelect" class="form-input">
+            <option value="💋">💋 Ciuman</option>
+            <option value="💆‍♀️">💆‍♀️ Manja / Pijit</option>
+            <option value="👑">👑 Ratu Sehari</option>
+            <option value="🍵">🍵 Matcha / Jajan</option>
+            <option value="🚗">🚗 Kencan Jalan-jalan</option>
+            <option value="🎁">🎁 Hadiah Impian</option>
+            <option value="🍿">🍿 Nonton Bioskop</option>
+            <option value="🧸">🧸 Pelukan Erat</option>
+          </select>
+        </div>
+        <div class="form-group" style="flex: 1;">
+          <label class="form-label">Badge Kategori:</label>
+          <select id="couponTagSelect" class="form-input">
+            <option value="JANJI COWO">JANJI COWO</option>
+            <option value="VIP CINTA">VIP CINTA</option>
+            <option value="UNLIMITED">UNLIMITED</option>
+            <option value="100% GRATIS">100% GRATIS</option>
+            <option value="SPESIAL DEA">SPESIAL DEA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Janji Manja Fauzi (Deskripsi):</label>
+        <textarea id="couponDescInput" class="form-textarea" rows="3" placeholder="Tuliskan apa yang bakal Fauzi lakuin saat Dea klaim kupon ini..."></textarea>
+      </div>
+
+      <div class="modal-footer-btns">
+        <button class="btn btn-secondary" id="btnCancelAddCoupon">Batal</button>
+        <button class="btn btn-primary" id="btnSaveCoupon"><i class="fa-solid fa-gift"></i> Simpan Kupon Cinta 🍀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Sweet Music Lounge (Cari & Pilih Musik Bebas Sendiri) -->
+  <div class="modal-overlay" id="musicLoungeModal">
+    <div class="modal-content modal-music-content">
+      <div class="modal-header">
+        <span class="modal-icon">🎵✨</span>
+        <button class="modal-close" id="musicLoungeClose">&times;</button>
+      </div>
+      <h3 class="modal-title">Pilih Musik Romantis Kita 🎶</h3>
+      <p class="modal-sub">Bebas pilih lagu sendiri dari HP / PC, upload MP3 favorit, atau pilih melodi manis! 🍃</p>
+
+      <!-- Now Playing Card inside Lounge -->
+      <div class="music-now-playing-box">
+        <div class="now-playing-wave" id="musicEqualizer">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="now-playing-text">
+          <h4 id="loungeCurrentSongTitle">Belum Ada Lagu Dipilih 🎧</h4>
+          <span id="loungeCurrentSongStatus">Silakan pilih atau upload lagu di bawah 🎶</span>
+        </div>
+        <button class="btn-play-pause-lounge" id="loungePlayToggle" title="Putar / Jeda">
+          <i class="fa-solid fa-play" id="loungePlayIcon"></i>
+        </button>
+      </div>
+
+      <!-- Music Source Tabs -->
+      <div class="music-tabs">
+        <button class="music-tab-btn active" data-tab="upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Lagu HP</button>
+        <button class="music-tab-btn" data-tab="presets"><i class="fa-solid fa-compact-disc"></i> Melodi Romantis</button>
+        <button class="music-tab-btn" data-tab="url"><i class="fa-solid fa-link"></i> Link Audio URL</button>
+      </div>
+
+      <!-- Tab Content 1: Upload MP3 (Opsi Utama Pilihan Sendiri) -->
+      <div class="music-tab-pane active" id="tabPaneUpload">
+        <div class="form-group" style="margin-top: 15px;">
+          <label class="form-label">Pilih Lagu Bebas dari File HP / Komputer:</label>
+          <div class="file-drop-area" id="musicFileDropArea" style="padding: 24px 16px; border: 2px dashed var(--color-primary); background: #f4fbf7; cursor: pointer;">
+            <i class="fa-solid fa-cloud-arrow-up drop-icon" style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 8px;"></i>
+            <div style="font-weight: 700; font-size: 0.98rem; color: var(--color-primary-dark);" id="dropMusicFileName">
+              Klik untuk Pilih Lagu MP3 / Audio Sendiri 🎵
+            </div>
+            <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 6px;">
+              Bebas pilih lagu bucin kesukaan kalian berdua (MP3, WAV, M4A, FLAC). Langsung diputar otomatis! 💖
+            </div>
+            <button type="button" class="btn btn-primary" style="margin-top: 12px; pointer-events: none; padding: 7px 16px; font-size: 0.82rem;">
+              <i class="fa-solid fa-folder-open"></i> Cari di File HP / Laptop
+            </button>
+            <input type="file" id="customAudioFileInput" accept="audio/*" class="hidden-file-input">
+          </div>
+          <div id="uploadSongFeedback" style="margin-top: 10px; font-size: 0.84rem; color: var(--color-primary-dark); font-weight: 600; text-align: center; display: none;"></div>
+        </div>
+      </div>
+
+      <!-- Tab Content 2: Melodi Pilihan Romantis -->
+      <div class="music-tab-pane" id="tabPanePresets">
+        <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 12px;">
+          Atau klik salah satu melodi bucin berikut jika ingin alunan instrumen manis:
+        </p>
+        <div class="presets-list">
+          <div class="preset-song-item" data-melody="lofi">
+            <div class="song-item-icon">🍵</div>
+            <div class="song-item-info">
+              <h5>Lofi Matcha Love</h5>
+              <p>Melodi lofi hangat penenang hati</p>
+            </div>
+            <button class="btn-select-song"><i class="fa-solid fa-play"></i></button>
+          </div>
+
+          <div class="preset-song-item" data-melody="piano">
+            <div class="song-item-icon">🎹</div>
+            <div class="song-item-info">
+              <h5>Sweet Acoustic Piano</h5>
+              <p>Alunan piano romantis nan syahdu</p>
+            </div>
+            <button class="btn-select-song"><i class="fa-solid fa-play"></i></button>
+          </div>
+
+          <div class="preset-song-item" data-melody="musicbox">
+            <div class="song-item-icon">🎠</div>
+            <div class="song-item-info">
+              <h5>Fairytale Music Box</h5>
+              <p>Kotak musik gemas seperti di negeri dongeng</p>
+            </div>
+            <button class="btn-select-song"><i class="fa-solid fa-play"></i></button>
+          </div>
+
+          <div class="preset-song-item" data-melody="sunset">
+            <div class="song-item-icon">🌅</div>
+            <div class="song-item-info">
+              <h5>Sunset Guitar Serenade</h5>
+              <p>Petikan gitar akustik sore hari yang manis</p>
+            </div>
+            <button class="btn-select-song"><i class="fa-solid fa-play"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content 3: Audio URL -->
+      <div class="music-tab-pane" id="tabPaneUrl">
+        <div class="form-group" style="margin-top: 15px;">
+          <label class="form-label">Masukkan Link Streaming / URL Audio MP3:</label>
+          <input type="url" id="customAudioUrlInput" class="form-input" placeholder="https://domain.com/lagu-kita.mp3">
+          <small style="color: var(--color-text-muted); font-size: 0.82rem; margin-top: 6px; display: block;">
+            💡 Kamu bisa paste direct link file MP3 lagu apa pun dari internet!
+          </small>
+        </div>
+        <button class="btn btn-primary" id="btnPlayCustomUrl" style="width: 100%; margin-top: 10px;">
+          <i class="fa-solid fa-play"></i> Putar Lagu dari URL Ini 🎶
+        </button>
+      </div>
+
+      <!-- Volume & Controls -->
+      <div class="music-controls-bottom">
+        <div class="volume-slider-wrap">
+          <i class="fa-solid fa-volume-low"></i>
+          <input type="range" id="musicVolumeSlider" min="0" max="100" value="75" class="custom-slider">
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
       </div>
     </div>
   </div>
