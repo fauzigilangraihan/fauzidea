@@ -162,7 +162,7 @@ function initAuthGatekeeper() {
     const waHeaderName = document.getElementById('waHeaderName');
     const waHeaderAvatar = document.getElementById('waHeaderAvatar');
     const waSenderLabel = document.getElementById('waActiveSenderLabel');
-    if (waHeaderName) waHeaderName.textContent = user === 'Dea' ? 'Fauzi Gilang Raihan 🤴' : 'Dea Khitibul Umam 💚';
+    if (waHeaderName) waHeaderName.textContent = user === 'Dea' ? 'Fauzi Gilang Raihan 🤴' : 'Dea Khotibul Umam 💚';
     if (waHeaderAvatar) waHeaderAvatar.textContent = user === 'Dea' ? '👦' : '👧';
     if (waSenderLabel) waSenderLabel.textContent = user === 'Dea' ? '👧 Dea' : '👦 Fauzi';
   }
@@ -479,7 +479,7 @@ function initLoveLetter() {
   
   if (!envelope || !letterBody) return;
 
-  const letterMessage = `Setiap hari bersamamu, Dea Khitibul Umam, selalu terasa seperti secangkir matcha latte hangat—menenangkan, manis, dan bikin nyaman.\n\nFauzi bersyukur banget bisa punya bidadari seindah dan sebaik kamu di hidup Fauzi. Makasih ya Dea udah selalu ada, sabar, dan bikin dunia Fauzi penuh tawa.\n\nJangan lupa tersenyum hari ini ya sayang, karena senyummu itu alasan hidupku jadi selalu bahagia! 🍃💚`;
+  const letterMessage = `Setiap hari bersamamu, Dea Khotibul Umam, selalu terasa seperti secangkir matcha latte hangat—menenangkan, manis, dan bikin nyaman.\n\nFauzi bersyukur banget bisa punya bidadari seindah dan sebaik kamu di hidup Fauzi. Makasih ya Dea udah selalu ada, sabar, dan bikin dunia Fauzi penuh tawa.\n\nJangan lupa tersenyum hari ini ya sayang, karena senyummu itu alasan hidupku jadi selalu bahagia! 🍃💚`;
 
   let isTyping = false;
   let hasTyped = false;
@@ -611,7 +611,7 @@ function initRunawayButtonGame() {
     if (modalOverlay && modalTitle && modalBodyText && modalIcon) {
       modalIcon.textContent = "🥰✨";
       modalTitle.textContent = "Yayyy! Dea Sayang Banget Sama Fauzi! 💚";
-      modalBodyText.textContent = "Fauzi jauh lebih sayang banget sama Dea Khitibul Umam! Janji kita bakal terus sama-sama, makan enak bareng, dan bikin banyak momen indah lainnya! I love you to the moon and back, bidadariku! 🍀";
+      modalBodyText.textContent = "Fauzi jauh lebih sayang banget sama Dea Khotibul Umam! Janji kita bakal terus sama-sama, makan enak bareng, dan bikin banyak momen indah lainnya! I love you to the moon and back, bidadariku! 🍀";
       modalOverlay.classList.add('active');
     }
     triggerConfetti(1.2);
@@ -1733,7 +1733,7 @@ function initWhatsAppMessenger() {
 
   function updateSenderToggleUI() {
     if (senderLabel) senderLabel.textContent = activeSender === 'Fauzi' ? '👦 Fauzi' : '👧 Dea';
-    if (headerName) headerName.textContent = activeSender === 'Fauzi' ? 'Dea Khitibul Umam 💚' : 'Fauzi Gilang Raihan 🤴';
+    if (headerName) headerName.textContent = activeSender === 'Fauzi' ? 'Dea Khotibul Umam 💚' : 'Fauzi Gilang Raihan 🤴';
     if (headerAvatar) headerAvatar.textContent = activeSender === 'Fauzi' ? '👧' : '👦';
   }
 
@@ -1895,7 +1895,7 @@ function initWhatsAppMessenger() {
       "Muachhh 1000x buat pacar tergemas sedunia! Jangan cemberut ya sayang! 💋",
       "Siap laksanakan nyonya ratuku! Aku jemput tepat waktu ya! 🚗✨",
       "Dea itu obat paling ampuh kalau aku lagi capek. Makasih ya sayang! 🌸",
-      "Fauzi sayang banget sama Dea Khitibul Umam selamanya! 💍🍃"
+      "Fauzi sayang banget sama Dea Khotibul Umam selamanya! 💍🍃"
     ];
 
     const pool = partner === 'Dea' ? repliesDea : repliesFauzi;
