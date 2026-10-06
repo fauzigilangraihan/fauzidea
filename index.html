@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Sweet Journey 🌿✨</title>
+  <meta name="description" content="Website spesial penuh cinta dan animasi lucu bernuansa Sage Green & Matcha Latte.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons & Canvas Confetti -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Floating background particles -->
+  <div class="ambient-background" id="ambientBg"></div>
+
+  <!-- Music Floating Widget -->
+  <div class="music-pill" id="musicToggle" title="Nyalakan / Matikan Musik Lucu">
+    <div class="music-disc" id="musicDisc">
+      <i class="fa-solid fa-music"></i>
+    </div>
+    <div class="music-info">
+      <span class="music-title">Lofi Matcha Love 🍵</span>
+      <span class="music-status" id="musicStatus">Klik untuk play 🎵</span>
+    </div>
+  </div>
+
+  <!-- Running Bucin Ticker Banner -->
+  <div class="bucin-ticker-wrapper">
+    <div class="bucin-ticker">
+      <span class="ticker-item">🚨 <strong>BREAKING BUCIN:</strong> Fauzi Gilang Raihan terbukti 1000% gak bisa hidup tanpa Dea Khitibul Umam! 🍀</span>
+      <span class="ticker-item">💖 <strong>DIAGNOSIS DOKTER:</strong> Tingkat keimutan Dea Khitibul Umam bikin Fauzi salting 24/7! 🍵</span>
+      <span class="ticker-item">🥰 <strong>REKOR DUNIA:</strong> Pasangan Fauzi & Dea dinobatkan sebagai pasangan tergemas di bumi! ✨</span>
+      <span class="ticker-item">🎁 <strong>ALERT KHUSUS:</strong> Dea berhak dapat pelukan hangat & traktiran apa aja dari Fauzi hari ini! 🌸</span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="page-wrapper">
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <!-- Couple Monogram Badge -->
+      <div class="couple-monogram-pill">
+        <span class="mono-initial">F</span>
+        <span class="mono-heart">💚</span>
+        <span class="mono-initial">D</span>
+        <span class="mono-divider">•</span>
+        <span class="mono-names">Fauzi & Dea</span>
+      </div>
+
+      <div class="badge-tag">
+        <span class="badge-icon">🍀</span>
+        <span>Dedicated to Dea Khitibul Umam, My Whole World</span>
+      </div>
+
+      <!-- Hero Featured Photo Frame (Wavy Mirror Aesthetic) -->
+      <div class="hero-featured-photo-wrapper">
+        <div class="hero-photo-frame" id="heroPhotoCard">
+          <div class="mirror-tape">🌿 Fauzi & Dea</div>
+          <img src="assets/images/photo1_couple_mirror.jpg" alt="Foto Berdua di Cermin" class="hero-couple-img">
+          <div class="hero-photo-badge">
+            <span class="badge-sparkle">✨</span>
+            <span>Partner in Crime & Selamanya</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mascot-container">
+        <!-- Cute SVG Matcha Animals -->
+        <div class="cute-couple-avatar">
+          <svg class="mascot-svg" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bunny 1 (Fauzi - Matcha Green) -->
+            <g class="mascot-left">
+              <ellipse cx="65" cy="80" rx="35" ry="32" fill="#A8D5BA" />
+              <!-- Ears -->
+              <ellipse cx="50" cy="35" rx="9" ry="25" fill="#A8D5BA" transform="rotate(-10 50 35)" />
+              <ellipse cx="50" cy="35" rx="5" ry="18" fill="#FDE2E4" transform="rotate(-10 50 35)" />
+              <ellipse cx="75" cy="32" rx="9" ry="25" fill="#A8D5BA" transform="rotate(10 75 32)" />
+              <ellipse cx="75" cy="32" rx="5" ry="18" fill="#FDE2E4" transform="rotate(10 75 32)" />
+              <!-- Eyes & Blush -->
+              <circle cx="55" cy="75" r="3.5" fill="#2D4030" />
+              <circle cx="75" cy="75" r="3.5" fill="#2D4030" />
+              <ellipse cx="48" cy="82" rx="5" ry="3" fill="#F9A8A8" opacity="0.8" />
+              <ellipse cx="82" cy="82" rx="5" ry="3" fill="#F9A8A8" opacity="0.8" />
+              <!-- Mouth -->
+              <path d="M 62 82 Q 65 86 68 82" stroke="#2D4030" stroke-width="2" fill="none" stroke-linecap="round" />
+            </g>
+            <!-- Heart in between -->
+            <g class="pulsing-heart-mascot">
+              <path d="M 100 65 A 6 6 0 0 0 90 60 A 6 6 0 0 0 85 70 Q 100 85 100 85 Q 100 85 115 70 A 6 6 0 0 0 110 60 A 6 6 0 0 0 100 65 Z" fill="#E65F78"/>
+            </g>
+            <!-- Bunny 2 (Dea - Warm Cream) -->
+            <g class="mascot-right">
+              <ellipse cx="135" cy="80" rx="35" ry="32" fill="#FFF4E6" />
+              <!-- Ears -->
+              <ellipse cx="125" cy="32" rx="9" ry="25" fill="#FFF4E6" transform="rotate(-10 125 32)" />
+              <ellipse cx="125" cy="32" rx="5" ry="18" fill="#FDE2E4" transform="rotate(-10 125 32)" />
+              <ellipse cx="150" cy="35" rx="9" ry="25" fill="#FFF4E6" transform="rotate(10 150 35)" />
+              <ellipse cx="150" cy="35" rx="5" ry="18" fill="#FDE2E4" transform="rotate(10 150 35)" />
+              <!-- Eyes & Blush -->
+              <circle cx="125" cy="75" r="3.5" fill="#2D4030" />
+              <circle cx="145" cy="75" r="3.5" fill="#2D4030" />
+              <ellipse cx="118" cy="82" rx="5" ry="3" fill="#F9A8A8" opacity="0.8" />
+              <ellipse cx="152" cy="82" rx="5" ry="3" fill="#F9A8A8" opacity="0.8" />
+              <!-- Mouth -->
+              <path d="M 132 82 Q 135 86 138 82" stroke="#2D4030" stroke-width="2" fill="none" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="hero-title">Hai Cantikku <span class="gradient-text">Dea</span>, Kamu Rumahku 🍃</h1>
+      <p class="hero-subtitle">Dari <strong>Fauzi Gilang Raihan</strong> khusus untuk <strong>Dea Khitibul Umam</strong>: Setiap detik sama kamu selalu jadi bagian paling favorit di hidup aku. Terima kasih ya sayang udah selalu bikin dunia Fauzi penuh warna matcha yang manis dan tenang!</p>
+
+      <div class="hero-buttons">
+        <a href="#gallerySection" class="btn btn-primary">
+          <i class="fa-solid fa-camera-retro"></i> Lihat Galeri Kita
+        </a>
+        <a href="#letterSection" class="btn btn-secondary">
+          <i class="fa-solid fa-envelope-open-text"></i> Baca Surat Cinta
+        </a>
+      </div>
+    </header>
+
+    <!-- Days Together Counter Section -->
+    <section class="section-card counter-card" id="counterSection">
+      <div class="section-header">
+        <span class="icon-bubble">⏳</span>
+        <h2>Hari Bersamamu</h2>
+        <p>Dan aku masih jatuh cinta sama kamu setiap harinya...</p>
+      </div>
+
+      <div class="counter-grid">
+        <div class="time-box">
+          <span class="time-value" id="daysCount">0</span>
+          <span class="time-label">Hari</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="hoursCount">00</span>
+          <span class="time-label">Jam</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="minutesCount">00</span>
+          <span class="time-label">Menit</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="secondsCount">00</span>
+          <span class="time-label">Detik</span>
+        </div>
+      </div>
+      
+      <div class="counter-footer">
+        <button class="small-pill-btn" id="editDateBtn">
+          <i class="fa-solid fa-calendar-heart"></i> Ubah Tanggal Jadian
+        </button>
+        <span class="counter-note" id="startDateLabel">Sejak: 14 Februari 2024</span>
+      </div>
+    </section>
+
+    <!-- Polaroid Memories Gallery with REAL PHOTOS -->
+    <section class="section-card memories-section" id="gallerySection">
+      <div class="section-header">
+        <span class="icon-bubble">📸</span>
+        <h2>Galeri Kenangan Manis</h2>
+        <p>Klik foto polaroid mana saja untuk memperbesar & kirim tanda cinta! 💖</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- Photo Card 1: Couple Mirror Selfie -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo1_couple_mirror.jpg" data-caption="Kocak & melet bareng di depan cermin, kencan paling seru!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo1_couple_mirror.jpg" alt="Mirror Selfie Berdua" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Partner in Crime 😜🍃</p>
+            <span class="polaroid-date">Kencan paling gemas</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 2: Pacar Pose Samping -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo2_pacar_side.jpg" data-caption="Dari sudut mana aja kamu selalu anggun dan mempesona.">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo2_pacar_side.jpg" alt="Foto Pacar Anggun" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Anggun & Mempesona 🌸</p>
+            <span class="polaroid-date">Senyum tipis yang bikin jatuh cinta</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 3: Pacar Full Mirror -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo3_pacar_mirror.jpg" data-caption="Bidadari matcha favoritku dengan outfit paling kece!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo3_pacar_mirror.jpg" alt="Foto Pacar Mirror Selfie" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>My Favorite View ✨</p>
+            <span class="polaroid-date">Outfit paling juara sedunia</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 4: Couple Cafe Malam -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo4_couple_cafe.jpg" data-caption="Malam hangat berdua, foto di layar hp sambil ketawa-tawa bareng.">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo4_couple_cafe.jpg" alt="Kencan di Cafe Malam" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Malam Bersamamu ☕</p>
+            <span class="polaroid-date">Bicara tentang masa depan</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 5: Pacar Gemas Selfie -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo5_pacar_cute.jpg" data-caption="Pose gemas andalan yang selalu sukses bikin salting seharian!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo5_pacar_cute.jpg" alt="Pacar Pose Gemas" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Lucu & Gemas Banget 🥰</p>
+            <span class="polaroid-date">Gak ada tandingannya!</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 6: Pacar Bawa Bunga Anggun -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo6_pacar_bunga_anggun.jpg" data-caption="Bunga mawarnya aja kalah cantik sama bidadari yang megang!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo6_pacar_bunga_anggun.jpg" alt="Pacar Bawa Bunga Cantik" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Mawar Kalah Cantik 🌹</p>
+            <span class="polaroid-date">Senyum paling meneduhkan</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 7: Pacar Ngintip Es Teh -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo7_pacar_ngintip_teh.jpg" data-caption="Ngintip di balik es teh aja gemasnya minta ampun!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo7_pacar_ngintip_teh.jpg" alt="Pacar Ngintip di Balik Minuman" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Ngintip Manis 🧋</p>
+            <span class="polaroid-date">Manisnya ngalahin gula</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 8: Couple Senyum Manis Berdua -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo8_couple_sweet_night.jpg" data-caption="Dua insan paling bahagia di dunia, senyum tulus yang gak terganti!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo8_couple_sweet_night.jpg" alt="Foto Berdua Tersenyum Bahagia" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Dua Bucin Bahagia ✨</p>
+            <span class="polaroid-date">Momen penuh tawa</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <!-- Photo Card 9: Pacar Pose Bunga Gemas -->
+        <div class="polaroid-card" data-tilt data-photo="assets/images/photo9_bunga_gemas.jpg" data-caption="Pose monyong andalan sambil bawa bunga, gemas tingkat dewa!">
+          <div class="tape-sticker"></div>
+          <div class="polaroid-img-wrapper">
+            <img src="assets/images/photo9_bunga_gemas.jpg" alt="Pacar Pose Bunga Gemas" class="polaroid-img">
+          </div>
+          <div class="polaroid-caption">
+            <p>Gemas Tingkat Dewa 😚💐</p>
+            <span class="polaroid-date">Moodbooster nomor satu</span>
+          </div>
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Love Letter Section -->
+    <section class="section-card letter-section" id="letterSection">
+      <div class="section-header">
+        <span class="icon-bubble">💌</span>
+        <h2>Surat Rahasia Buat Kamu</h2>
+        <p>Klik amplopnya buat buka pesan spesial ini!</p>
+      </div>
+
+      <div class="envelope-container" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-paper" id="letterPaper">
+            <div class="letter-inner">
+              <h3 class="letter-title">Hai Dea Sayangku,</h3>
+              <p class="letter-body" id="letterTypedContent">
+                <!-- Typewriter text inserted via JS -->
+              </p>
+              <div class="letter-sign">
+                <span>With all my love & soul,</span>
+                <strong>Fauzi Gilang Raihan ❤️</strong>
+              </div>
+            </div>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-top" id="envelopeTop"></div>
+          <div class="envelope-seal" id="envelopeSeal">
+            <span>🌿</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="tap-hint" id="envelopeHint"><i class="fa-regular fa-hand-pointer"></i> Sentuh amplop hijau ini untuk membuka!</p>
+    </section>
+
+    <!-- "Open When..." Virtual Jar Section -->
+    <section class="section-card jar-section" id="jarSection">
+      <div class="section-header">
+        <span class="icon-bubble">✨</span>
+        <h2>Toples Pesan "Buka Saat..."</h2>
+        <p>Pilih kapsul sesuai perasaan kamu hari ini:</p>
+      </div>
+
+      <div class="pills-grid">
+        <button class="capsule-btn" data-message="Kalau kamu lagi capek, ingat ya istirahat itu bukan berarti berhenti. Kamu udah lakuin yang terbaik hari ini, dan aku selalu bangga banget sama perjuangan kamu. Sini peluk online dulu 🤗💚">
+          <span class="capsule-emoji">🔋</span>
+          <span>Buka Saat Lagi Capek</span>
+        </button>
+
+        <button class="capsule-btn" data-message="Lagi kangen ya? Coba pejamkan mata sebentar. Aku juga lagi mikirin kamu kok di sini. Nanti kita ketemu dan makan yang enak-enak ya! I miss you so much! 🥹🍃">
+          <span class="capsule-emoji">🥺</span>
+          <span>Buka Saat Lagi Kangen</span>
+        </button>
+
+        <button class="capsule-btn" data-message="Kenapa sedih atau bad mood? Siapa yang bikin kamu kesel? Biar aku marahin! Apapun masalahnya, kamu gak sendirian. Aku selalu siap dengerin curhatan kamu kapan aja ya sayang. 🌸🌿">
+          <span class="capsule-emoji">🌧️</span>
+          <span>Buka Saat Lagi Bad Mood</span>
+        </button>
+
+        <button class="capsule-btn" data-message="Tahu gak bedanya kamu sama matcha latte? Kalau matcha manis di lidah, kalau kamu manisnya nempel terus di hati aku tiap hari tanpa jeda! Cieee salting ya? 🤭🍵">
+          <span class="capsule-emoji">🍬</span>
+          <span>Buka Saat Butuh Gombalan</span>
+        </button>
+
+        <button class="capsule-btn" data-message="Ingat ya: Kamu itu cantik luar dan dalam, pintar, dan berharga banget buat orang-orang di sekitarmu, terutama aku. Jangan pernah ragukan dirimu sendiri ya! You are my greatest miracle. 🌟">
+          <span class="capsule-emoji">👑</span>
+          <span>Buka Saat Ragu Sama Diri Sendiri</span>
+        </button>
+
+        <button class="capsule-btn" data-message="Bobo yang nyenyak ya peri kecilku. Tarik selimutnya, buang semua beban pikiran hari ini. Semoga mimpi indah dan ketemu aku di alam mimpi. Good night sweetheart! 🌙✨">
+          <span class="capsule-emoji">😴</span>
+          <span>Buka Sebelum Tidur</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 1. BUCIN METER INTERAKTIF -->
+    <section class="section-card bucin-meter-section" id="bucinMeterSection">
+      <div class="section-header">
+        <span class="icon-bubble">🌡️</span>
+        <h2>Bucin Meter Resmi 999%</h2>
+        <p>Coba cek seberapa parah tingkat kebucinan aku ke kamu hari ini!</p>
+      </div>
+
+      <div class="bucin-meter-card">
+        <div class="meter-dial-wrapper">
+          <div class="meter-bar-track">
+            <div class="meter-bar-fill" id="meterFill"></div>
+          </div>
+          <div class="meter-value-display">
+            <span class="meter-number" id="meterScore">0%</span>
+            <span class="meter-status" id="meterStatus">Siap Diuji... 🍀</span>
+          </div>
+        </div>
+
+        <div class="meter-diagnosis-box" id="meterDiagnosisBox">
+          <div class="diagnosis-header">
+            <i class="fa-solid fa-clipboard-check"></i> Hasil Diagnosis Dokter Cinta:
+          </div>
+          <p class="diagnosis-text" id="diagnosisText">
+            Klik tombol di bawah untuk menjalankan alat ukur deteksi cinta!
+          </p>
+        </div>
+
+        <button class="btn btn-primary btn-calc-bucin" id="btnRunMeter">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Hitung Kebucinan Sekarang!
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. KUPON CINTA BUCIN (LOVE COUPON BOOK) -->
+    <section class="section-card coupons-section" id="couponsSection">
+      <div class="section-header">
+        <span class="icon-bubble">🎟️</span>
+        <h2>Buku Kupon Manja (Khusus Buat Kamu)</h2>
+        <p>Kupon ini sah dan bisa kamu klaim kapan aja tanpa batas waktu! 😉</p>
+      </div>
+
+      <div class="coupons-grid">
+        <!-- Coupon 1 -->
+        <div class="coupon-card">
+          <div class="coupon-left">
+            <span class="coupon-tag">GRATIS 100%</span>
+            <span class="coupon-icon">🍵</span>
+          </div>
+          <div class="coupon-middle">
+            <h4>Traktir Minuman / Matcha</h4>
+            <p>Berhak pesan minuman apa aja kesukaan kamu, aku yang bayarin full!</p>
+          </div>
+          <div class="coupon-right">
+            <button class="coupon-claim-btn" data-title="Traktir Minuman / Matcha 🍵">Klaim Kupon</button>
+          </div>
+        </div>
+
+        <!-- Coupon 2 -->
+        <div class="coupon-card">
+          <div class="coupon-left">
+            <span class="coupon-tag">UNLIMITED</span>
+            <span class="coupon-icon">💆‍♀️</span>
+          </div>
+          <div class="coupon-middle">
+            <h4>Elus Kepala & Peluk Hangat</h4>
+            <p>Berhak dielus kepalanya sampai ngantuk dan dapet pelukan tanpa batas waktu.</p>
+          </div>
+          <div class="coupon-right">
+            <button class="coupon-claim-btn" data-title="Elus Kepala & Peluk Hangat 💆‍♀️">Klaim Kupon</button>
+          </div>
+        </div>
+
+        <!-- Coupon 3 -->
+        <div class="coupon-card">
+          <div class="coupon-left">
+            <span class="coupon-tag">VIP PASS</span>
+            <span class="coupon-icon">👑</span>
+          </div>
+          <div class="coupon-middle">
+            <h4>Bebas Ngambek 24 Jam</h4>
+            <p>Kalau kamu lagi ngambek, cowokmu ini wajib minta maaf duluan & manjain!</p>
+          </div>
+          <div class="coupon-right">
+            <button class="coupon-claim-btn" data-title="Bebas Ngambek 24 Jam 👑">Klaim Kupon</button>
+          </div>
+        </div>
+
+        <!-- Coupon 4 -->
+        <div class="coupon-card">
+          <div class="coupon-left">
+            <span class="coupon-tag">MAKAN PUAS</span>
+            <span class="coupon-icon">🍕</span>
+          </div>
+          <div class="coupon-middle">
+            <h4>Kencan Makan Enak Bebas Pilih</h4>
+            <p>Pilih restoran atau jajanan apa aja yang kamu pengenin hari ini!</p>
+          </div>
+          <div class="coupon-right">
+            <button class="coupon-claim-btn" data-title="Kencan Makan Enak Bebas Pilih 🍕">Klaim Kupon</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONS WHY FAUZI LOVES DEA -->
+    <section class="section-card reasons-section" id="reasonsSection">
+      <div class="section-header">
+        <span class="icon-bubble">✨</span>
+        <h2>Alasan Kenapa Fauzi Bucin Banget Sama Dea</h2>
+        <p>Sentuh kartunya buat lihat rahasia di baliknya! 💖</p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" data-flip>
+          <div class="reason-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">🌸</span>
+              <h4>Senyum Cantik Dea</h4>
+              <small>Tap untuk baca 🍃</small>
+            </div>
+            <div class="reason-back">
+              <p>Setiap Dea senyum, semua beban dan capeknya Fauzi langsung lenyap. Senyum Dea itu rumah ternyaman buat Fauzi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-flip>
+          <div class="reason-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">🧋</span>
+              <h4>Gaya Gemas & Ngintipnya</h4>
+              <small>Tap untuk baca 🍃</small>
+            </div>
+            <div class="reason-back">
+              <p>Waktu Dea pose monyong, ngintip di balik es teh, atau pasang muka duck face... itu kelemahan terbesar Fauzi! Lucu banget gak ada tandingannya.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-flip>
+          <div class="reason-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">👑</span>
+              <h4>Hati Dea yang Tulus</h4>
+              <small>Tap untuk baca 🍃</small>
+            </div>
+            <div class="reason-back">
+              <p>Perhatian kecil, kesabaran, dan cara Dea menyayangi Fauzi bikin Fauzi selalu bersyukur punya bidadari sehebat Dea.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" data-flip>
+          <div class="reason-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">🏡</span>
+              <h4>Masa Depan Indah Berdua</h4>
+              <small>Tap untuk baca 🍃</small>
+            </div>
+            <div class="reason-back">
+              <p>Karena di setiap impian dan masa depan Fauzi, cuma ada satu nama yang ingin selalu Fauzi jaga dan bahagiakan: Dea Khitibul Umam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERTIFIKAT PACAR TERBAIK DI ALAM SEMESTA -->
+    <section class="section-card cert-section" id="certSection">
+      <div class="section-header">
+        <span class="icon-bubble">🏆</span>
+        <h2>Piagam Penghargaan Resmi</h2>
+        <p>Diakui secara sah oleh seluruh semesta!</p>
+      </div>
+
+      <div class="certificate-frame">
+        <div class="cert-inner-border">
+          <div class="cert-ribbon">⭐ OFFICIAL LOVE AWARD ⭐</div>
+          <h3 class="cert-heading">SERTIFIKAT PENGHARGAAN</h3>
+          <p class="cert-subheading">Diberikan Dengan Penuh Cinta & Kebucinan Kepada:</p>
+          
+          <div class="cert-awardee-name">
+            🌸 DEA KHITIBUL UMAM 🌸
+          </div>
+
+          <p class="cert-desc">
+            Atas prestasinya yang luar biasa selalu menjadi manusia paling manis, selalu sabar, paling menggemaskan di dunia, dan berhasil membuat <strong>Fauzi Gilang Raihan</strong> jatuh cinta berkali-kali setiap hari tanpa henti.
+          </p>
+
+          <div class="cert-footer-info">
+            <div class="cert-seal">
+              <span class="seal-icon">💚</span>
+              <span class="seal-text">VERIFIED BUCIN</span>
+            </div>
+            <div class="cert-signature">
+              <div class="sign-line"></div>
+              <span class="sign-role">Fauzi Gilang Raihan</span>
+              <small>Pacar & Pelindung No. 1 • Selamanya</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cute Runaway Button Mini Game -->
+    <section class="section-card game-section" id="gameSection">
+      <div class="section-header">
+        <span class="icon-bubble">🎮</span>
+        <h2>Pertanyaan Paling Jujur</h2>
+        <p>Jawab dengan sejujurnya ya Dea! 😉</p>
+      </div>
+
+      <div class="game-box">
+        <div class="game-question">
+          <h3>Apakah Dea sayang banget sama Fauzi hari ini & seterusnya? 🥺👉👈</h3>
+        </div>
+        <div class="game-buttons-area" id="gameBtnContainer">
+          <button class="btn btn-yes" id="btnYes">
+            Iya, Fauzi! Sayang Banget! 🥰
+          </button>
+          <button class="btn btn-no" id="btnNo">
+            Gak Mau 😜
+          </button>
+        </div>
+        <p class="game-tip" id="gameTipText">Coba deh klik tombol "Gak Mau" kalau bisa~</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-mascot">🍵 💚 🍀</div>
+      <p>Dibuat dengan sepenuh hati khusus untuk bidadariku tercinta.</p>
+      <small>Always and forever with you.</small>
+    </footer>
+
+  </div>
+
+  <!-- Modal for Message Popup -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-icon" id="modalIcon">💌</span>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <h3 class="modal-title" id="modalTitle">Pesan Spesial</h3>
+      <p class="modal-body" id="modalBodyText">Pesan disini...</p>
+      <button class="btn btn-primary" id="modalActionBtn">Peluk Online 💚</button>
+    </div>
+  </div>
+
+  <!-- Modal for Change Start Date -->
+  <div class="modal-overlay" id="dateModalOverlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-icon">📅</span>
+        <button class="modal-close" id="dateModalClose">&times;</button>
+      </div>
+      <h3 class="modal-title">Atur Tanggal Jadian Kita</h3>
+      <input type="date" id="dateInput" class="custom-date-picker">
+      <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn-primary" id="saveDateBtn">Simpan Tanggal 🍀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Photo Lightbox Preview -->
+  <div class="modal-overlay" id="photoModalOverlay">
+    <div class="modal-content photo-modal-content">
+      <div class="modal-header">
+        <span class="modal-icon">📸</span>
+        <button class="modal-close" id="photoModalClose">&times;</button>
+      </div>
+      <div class="photo-preview-wrapper">
+        <img src="" id="photoModalImg" alt="Foto Kenangan" class="photo-modal-img">
+      </div>
+      <p class="photo-modal-caption" id="photoModalCaption">Caption di sini...</p>
+      <div class="photo-love-bar">
+        <button class="btn btn-primary" id="photoLoveBtn">
+          <i class="fa-solid fa-heart"></i> Kirim Cinta (<span id="photoLoveCounter">0</span>)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
